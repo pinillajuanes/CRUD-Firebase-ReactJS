@@ -32,7 +32,8 @@ const Show = () => {
     <div className="container">
       <div className="row">
         <div className="col">
-          <div>
+          <div className='d-grip gap-2'>
+            <Link to="/create" className="btn btn-secondary">Create</Link>
           </div>
           <table className="table table-dark table-hover">
             <thead>
@@ -52,7 +53,8 @@ const Show = () => {
                   <td>{ libro.genero }</td>
                   <td>{ libro.publicacion }</td>
                   <td>
-                    <button onClick={() => deleteLibro(libro.id)} className='btn btn-danger'>Borrar</button>
+                    <Link to={`/edit/${libro.id}`} className='btn btn-light'><i className='fa-solid fa-pencil'></i></Link>
+                    <button onClick={() => deleteLibro(libro.id)} className='btn btn-danger'><i className='fa-solid fa-trash'></i></button>
                   </td>
 
                 </tr>
