@@ -16,12 +16,32 @@ const Show = () => {
     const getLibros = async () => {
         const data = await getDocs(librosCollecion)
         setLibros(data.docs.map(doc => ({...doc.data(), id: doc.id})))
-        console.log(libros)
     }
     const deleteLibro = async (id) => {
       const libroDoc = doc(db, "libros", id)
       await deleteDoc(libroDoc)
       getLibros()
+    }
+    const confirmDelete = (id) => {
+      MySwal.fire({
+        title: '¿Estás seguro?',
+        text: "¡No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Sí, bórralo'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          deleteLibro(id)
+          MySwal.fire(
+            '¡Borrado!',
+            'El libro ha sido borrado',
+            'success'
+          )
+        }
+      })
+    
     }
     useEffect(() => {
         getLibros()
@@ -54,7 +74,7 @@ const Show = () => {
                   <td>{ libro.publicacion }</td>
                   <td>
                     <Link to={`/edit/${libro.id}`} className='btn btn-light'><i className='fa-solid fa-pencil'></i></Link>
-                    <button onClick={() => deleteLibro(libro.id)} className='btn btn-danger'><i className='fa-solid fa-trash'></i></button>
+                    <button onClick={() => confirmDelete(libro.id)} className='btn btn-danger'><i className='fa-solid fa-trash'></i></button>
                   </td>
 
                 </tr>
