@@ -1,37 +1,28 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebaseConfig/firebase'
+import { auth } from '../firebaseConfig/firebase';
 
 const Create = () => {
-  const [autor, setAutor] = useState('')
   const [titulo, setTitulo] = useState('')
-  const [genero, setGenero] = useState('')
-  const [publicacion, setPublicacion] = useState(0)
+  const [detalles, setDetalles] = useState('')
   const navigate = useNavigate()
-  const librosCollecion = collection(db, "libros")
+  const tareasCollecion = collection(db, "tareas")
   const store = async (e) => {
     e.preventDefault()
-    await addDoc(librosCollecion, {
-      autor: autor, titulo: titulo, genero: genero, publicacion: publicacion
+    await addDoc(tareasCollecion, {
+      titulo: titulo, detalles: detalles, usuario: auth.currentUser.uid, fecha_creacion: serverTimestamp(),
+
     })
-    navigate('/')
+    navigate('/showall')
   }
   return (
     <div className='container'>
       <div className='row'>
         <div className='col'>
-          <h1 className='text-center'>Añadir un libro</h1>
+          <h1 className='text-center'>Añadir una tarea</h1>
           <form onSubmit={store}>
-            <div className='mb-3'>
-              <label className='form-label'>Autor</label>
-              <input
-                type='text'
-                className='form-control'
-                value={autor}
-                onChange={(e) => setAutor(e.target.value)}
-              />
-            </div>
             <div className='mb-3'>
               <label className='form-label'>Título</label>
               <input
@@ -42,21 +33,12 @@ const Create = () => {
               />
             </div>
             <div className='mb-3'>
-              <label className='form-label'>Género</label>
+              <label className='form-label'>Detalles</label>
               <input
                 type='text'
                 className='form-control'
-                value={genero}
-                onChange={(e) => setGenero(e.target.value)}
-              />
-            </div>
-            <div className='mb-3'>
-              <label className='form-label'>Año</label>
-              <input
-                type='number'
-                className='form-control'
-                value={publicacion}
-                onChange={(e) => setPublicacion(e.target.value)}
+                value={detalles}
+                onChange={(e) => setDetalles(e.target.value)}
               />
             </div>
             <div className='d-grid gap-2'>
