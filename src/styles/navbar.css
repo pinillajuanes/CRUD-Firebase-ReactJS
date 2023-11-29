@@ -1,0 +1,33 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    backdrop-filter: blur(5px);
+    padding: 20px 30px;
+    color: #fff;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    list-style-type:none ;
+}
+
+.nav-list li{
+    margin: 0 20px ;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.logo img {
+    max-width: 130px;
+}
+
