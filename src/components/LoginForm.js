@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
+
 import { auth } from '../firebaseConfig/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const LoginForm = ({ onLogin }) => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -16,6 +19,7 @@ const LoginForm = ({ onLogin }) => {
     } catch (error) {
       setError(error.message);
     }
+    navigate('/showall')
   }
 
   return (
