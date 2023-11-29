@@ -45,7 +45,8 @@ const Show = () => {
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Sí, bórralo'
+      confirmButtonText: 'Sí, bórralo',
+      cancelButtonText: 'Cancelar' 
     }).then((result) => {
       if (result.isConfirmed) {
         deleteTarea(id);
@@ -77,7 +78,7 @@ const Show = () => {
                 <tr>
                   <th scope="col">Título</th>
                   <th scope="col">Detalles</th>
-                  <th scope="col">Fecha de creación</th>
+                  <th scope="col">Última modificación</th>
                   <th scope="col">Acciones</th>
                 </tr>
               </thead>
