@@ -62,7 +62,7 @@ body{
     margin-top: 25px;
     padding: 3%;
     width: 100%;
-    color: #fff;
+    color: #000000;
 }
 .foto img {
     max-width: 420px;
@@ -109,3 +109,9 @@ body{
         right:1300px;
     }
 }
+.table-container {
+    background-color: rgba(255, 255, 255, 0.5); /* Ajusta el valor de alfa según tu preferencia */
+    border-radius: 15px; /* Ajusta el radio de borde según tu preferencia */
+    overflow: hidden;
+    margin-top: 20px; /* Ajusta el margen superior según tu diseño */
+  }

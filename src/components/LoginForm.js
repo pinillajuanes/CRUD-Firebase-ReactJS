@@ -16,10 +16,11 @@ const LoginForm = ({ onLogin }) => {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       setError(null);
       setCurrentUser(userCredential.user); // Callback to parent component
+      navigate('/showall')
     } catch (error) {
       setError(error.message);
     }
-    navigate('/showall')
+    
   }
 
   return (

@@ -64,6 +64,7 @@ const Show = () => {
             <div className='d-grip gap-2'>
               <Link to="/create" className="btn btn-secondary">Create</Link>
             </div>
+            <div>
             <table className="table table-dark table-hover">
               <thead>
                 <tr>
@@ -87,6 +88,7 @@ const Show = () => {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         </div>
       </div>
