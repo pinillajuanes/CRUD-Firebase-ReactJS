@@ -19,7 +19,7 @@ const Home = () => {
             <br></br>
             <p id='explicacion'>MindFlow Tasks es tu compañero ideal para gestionar tus actividades diarias de manera serena y eficiente. Transforma la gestión de tareas en una experiencia tranquila y fluida. ¡Regístrate hoy y deja que tu productividad fluya con facilidad!</p>
             <br></br>
-            <Link to={`/register`} className='btn btn-light' >Registrarse</Link>
+            <Link to={`/register`} className='botnRegistro' >Registrarse</Link>
             </div> 
         <div className='foto'>
             <img src={bomb} alt="bombilla" />

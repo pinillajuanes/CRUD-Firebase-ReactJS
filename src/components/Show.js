@@ -65,7 +65,7 @@ const Show = () => {
               <Link to="/create" className="btn btn-secondary">Create</Link>
             </div>
             <div>
-            <table className="table table-dark table-hover">
+            <table className="table table-light table-hover">
               <thead>
                 <tr>
                   <th scope="col">Título</th>

@@ -14,7 +14,7 @@ const Navbar = () => {
             <li>¿Qué es?</li>
             <li>Recursos</li>
             <li></li>
-            <Link to={`/login`} className='btn btn-light'>Iniciar Sesión</Link>
+            <Link to={`/login`} className='botnInicioSesion'>Iniciar Sesión</Link>
         </ul>
         
       </nav>

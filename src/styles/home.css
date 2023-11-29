@@ -76,7 +76,24 @@ body{
     font-weight: 700;
     font-size: 37px;
     font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
 }
+.botnRegistro{
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    color: rgb(27, 27, 27);
+    text-decoration:none;
+    font-weight: 500;
+}
+.botnRegistro:hover {
+    background-color: #C8336D;
+    color: #fff;
+}
+
 @keyframes down {
     0%, 100%{
         top:-100px;

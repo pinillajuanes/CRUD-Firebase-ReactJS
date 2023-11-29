@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { auth } from '../firebaseConfig/firebase';
+import { useNavigate, Link} from 'react-router-dom'
+
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const RegistrationForm = ({ onRegistration }) => {
@@ -35,6 +37,8 @@ const RegistrationForm = ({ onRegistration }) => {
           <p>Error: {error}</p>
         </div>
       )}
+      <p>¿Ya tienes una cuenta? </p><Link to={`/login`} className='btn btn-light' >Iniciar sesión</Link>
+
     </div>
   );
 };

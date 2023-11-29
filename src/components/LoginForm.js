@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link} from 'react-router-dom'
 
 import { auth } from '../firebaseConfig/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -40,6 +40,8 @@ const LoginForm = ({ onLogin }) => {
           <p>Error: {error}</p>
         </div>
       )}
+      <p>¿No tienes una cuenta aún? </p><Link to={`/register`} className='btn btn-light' >Registrarse</Link>
+
     </div>
   );
 };

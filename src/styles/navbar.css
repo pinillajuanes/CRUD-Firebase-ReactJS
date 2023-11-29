@@ -31,3 +31,18 @@ nav{
     max-width: 130px;
 }
 
+.botnInicioSesion{
+    background-color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    color: rgb(27, 27, 27);
+    text-decoration:none;
+    font-weight: 500;
+}
+.botnInicioSesion:hover {
+    background-color: #009AFF;
+    color: #ffffff;
+}
