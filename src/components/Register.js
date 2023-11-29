@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link} from 'react-router-dom'
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../firebaseConfig/firebase'
 
@@ -12,7 +12,7 @@ const Register = () => {
   const addUser = async (e) => {
     e.preventDefault()
     await addDoc(usuariosCollecion, {
-      NombreUsuario: nombre, CorreoElectronico: email, Contrasena: contrasena})
+      username: nombre, email: email, password: contrasena})
     navigate('/showall')
   }
   return (
@@ -59,6 +59,7 @@ const Register = () => {
               </button>
             </div>
           </form>
+          Ya tienes una cuenta? <Link to={`/login`} className='btn btn-light'>Inicia sesión</Link>
         </div>
       </div>
     </div>

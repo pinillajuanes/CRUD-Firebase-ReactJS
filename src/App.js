@@ -4,6 +4,7 @@ import Create from './components/Create';
 import Edit from './components/Edit';
 import Home from './components/Home';
 import Register from './components/Register';
+import Login from './components/Login';
 
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/showall" element={<Show />} />
           <Route path="/create" element={<Create />} />
           <Route path="/edit/:id" element={<Edit />} />
