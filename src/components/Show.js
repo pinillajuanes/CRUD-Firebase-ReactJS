@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { collection, getDocs, deleteDoc,query, where, getDoc, updateDoc} from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, query, where, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig/firebase';
 import Swal from 'sweetalert2';
 import { doc } from 'firebase/firestore';
@@ -46,7 +46,7 @@ const Show = () => {
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
       confirmButtonText: 'Sí, bórralo',
-      cancelButtonText: 'Cancelar' 
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
         deleteTarea(id);
@@ -94,9 +94,25 @@ const Show = () => {
                       <button onClick={() => confirmDelete(tarea.id)} className='btn btn-danger'><i className='fa-solid fa-trash'></i></button>
                     </td>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {tareas.map((tarea) => {
+                    const buttonColor = tarea.completado ? 'btn-success' : 'btn-info';
+                    return (
+                      <tr key={tarea.id}>
+                        <td style={{ textDecoration: tarea.completado ? 'line-through' : 'none' }}>{tarea.titulo}</td>
+                        <td>{tarea.detalles}</td>
+                        <td>{tarea.fecha_creacion.toDate().toLocaleString()}</td>
+                        <td>
+                          <button onClick={() => changeComplete(tarea.id)} className={`btn ${buttonColor}`}><i className='fa fa-check-circle'></i></button>
+                          <Link to={`/edit/${tarea.id}`} className='btn btn-light'><i className='fa-solid fa-pencil'></i></Link>
+                          <button onClick={() => confirmDelete(tarea.id)} className='btn btn-danger'><i className='fa-solid fa-trash'></i></button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
