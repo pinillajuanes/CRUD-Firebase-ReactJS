@@ -31,3 +31,7 @@
     background-color: #3374c8;
     color: #fff;
 }
+.table-container {
+    max-height: 400px; /* Establece la altura máxima según tus necesidades */
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+  }

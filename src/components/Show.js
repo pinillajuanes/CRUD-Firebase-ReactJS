@@ -69,19 +69,17 @@ const Show = () => {
   return (
     <>
       <div className="container">
-      <div className="logo">
-        <img src={DEA1} alt="logo" />
-      </div>
-      <div className='headerrr'>
-        <h1 className='HeaderPrincipal'>Mi espacio de tareas</h1>
-        <Link to="/create" className="botnCrear">Create</Link>
-        
-      </div>
+        <div className="logo">
+          <img src={DEA1} alt="logo" />
+        </div>
+        <div className='headerrr'>
+          <h1 className='HeaderPrincipal'>Mi espacio de tareas</h1>
+          <Link to="/create" className="botnCrear">Create</Link>
+        </div>
 
         <div className="row">
           <div className="colooooo">
-          
-            <div>
+            <div className="table-container">
               <table className="table table-light table-hover">
                 <thead>
                   <tr>
