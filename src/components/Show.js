@@ -7,6 +7,8 @@ import { doc } from 'firebase/firestore';
 import withReactContent from 'sweetalert2-react-content';
 import { auth } from '../firebaseConfig/firebase';
 import DEA1 from '../assets/DEA1.png';
+import DEA6 from '../assets/DEA6.png';
+
 import '../styles/showall.css';
 
 const MySwal = withReactContent(Swal);
@@ -67,51 +69,67 @@ const Show = () => {
   }, []);
 
   return (
-    <>
+    <div className='PageShowall'>
+    <div id='up'></div>
+      <div id='down'></div>
+      <div id='left'></div>
+      <div id='right'></div>
       <div className="container">
+        
         <div className="logo">
           <img src={DEA1} alt="logo" />
         </div>
-        <div className='headerrr'>
+      
+        <div className="rowoooo">
+          <div className='supCOloo'>
+          <div className='headerrr'>
           <h1 className='HeaderPrincipal'>Mi espacio de tareas</h1>
-          <Link to="/create" className="botnCrear">Create</Link>
-        </div>
+          <Link to="/create" className="botnCrear">Añadir tarea</Link>
+          </div>
 
-        <div className="row">
-          <div className="colooooo">
-            <div className="table-container">
-              <table className="table table-light table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">Título</th>
-                    <th scope="col">Detalles</th>
-                    <th scope="col">Última modificación</th>
-                    <th scope="col">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tareas.map((tarea) => {
-                    const buttonColor = tarea.completado ? 'btn-success' : 'btn-info';
-                    return (
-                      <tr key={tarea.id}>
-                        <td style={{ textDecoration: tarea.completado ? 'line-through' : 'none' }}>{tarea.titulo}</td>
-                        <td>{tarea.detalles}</td>
-                        <td>{tarea.fecha_creacion.toDate().toLocaleString()}</td>
-                        <td>
-                          <button onClick={() => changeComplete(tarea.id)} className={`btn ${buttonColor}`}><i className='fa fa-check-circle'></i></button>
-                          <Link to={`/edit/${tarea.id}`} className='btn btn-light'><i className='fa-solid fa-pencil'></i></Link>
-                          <button onClick={() => confirmDelete(tarea.id)} className='btn btn-danger'><i className='fa-solid fa-trash'></i></button>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+            <div className="colooooo">
+              <div className="table-container">
+                <table className="table table-light table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Título</th>
+                      <th scope="col">Detalles</th>
+                      <th scope="col">Creación</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tareas.map((tarea) => {
+                      const buttonColor = tarea.completado ? 'btn-success' : 'btn-info';
+                      return (
+                        <tr key={tarea.id}>
+                          <td style={{ textDecoration: tarea.completado ? 'line-through' : 'none' }}>{tarea.titulo}</td>
+                          <td>{tarea.detalles}</td>
+                          <td>{tarea.fecha_creacion.toDate().toLocaleString()}</td>
+                          <td>
+                            <button onClick={() => changeComplete(tarea.id)} className={`btn ${buttonColor}`}><i className='fa fa-check-circle'></i></button>
+                            <Link to={`/edit/${tarea.id}`} className='btn btn-light'><i className='fa-solid fa-pencil'></i></Link>
+                            <button onClick={() => confirmDelete(tarea.id)} className='btn btn-danger'><i className='fa-solid fa-trash'></i></button>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+              
+            </div>
+            </div>
+          <div className='Pomodoro'>
+            
+            <div className="logooo">
+            
+              <img src={DEA6} alt="logo" />
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
