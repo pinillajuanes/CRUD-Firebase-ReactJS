@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { auth } from '../firebaseConfig/firebase';
+import '../styles/formsLogRegister.css';
 import { useNavigate, Link} from 'react-router-dom'
 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -21,12 +22,14 @@ const RegistrationForm = ({ onRegistration }) => {
   }
 
   return (
-    <div>
-      <label htmlFor="email">Correo Electronico</label>
-      <input type="email" id="email" onChange={(ev) => setEmail(ev.target.value)} />
-      <label htmlFor="password">Contraseña</label>
-      <input type="password" id="password" onChange={(ev) => setPassword(ev.target.value)} />
-      <button onClick={registerUser}>Registrarse</button>
+    <div className="containForm">
+      <label htmlFor="email" className="labelsInputs">Correo Electronico</label>
+      <input className="inputForms" type="email" id="email" onChange={(ev) => setEmail(ev.target.value)} />
+      <br></br>
+      <label htmlFor="password" className="labelsInputs">Contraseña</label>
+      <input className="inputForms" type="password" id="password" onChange={(ev) => setPassword(ev.target.value)} />
+      <br></br>
+      <button onClick={registerUser} className="botnRegistro">Registrarse</button>
       {currentUser && (
         <div>
           <p>Usuario autenticado: {currentUser.email}</p>
@@ -37,7 +40,8 @@ const RegistrationForm = ({ onRegistration }) => {
           <p>Error: {error}</p>
         </div>
       )}
-      <p>¿Ya tienes una cuenta? </p><Link to={`/login`} className='btn btn-light' >Iniciar sesión</Link>
+      <br></br>
+      <div className="yatienes"><p>¿Ya tienes una cuenta? </p><Link to={`/login`} className="linkaotro" >Iniciar sesión</Link></div>
 
     </div>
   );

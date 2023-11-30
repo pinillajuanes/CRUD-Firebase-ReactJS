@@ -1,0 +1,37 @@
+.containForm{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top:20px ;
+    background-color: rgb(255, 255, 255, 0.2);
+}
+
+.labelsInputs{
+    text-align: left;
+}
+.yatienes{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.linkaotro{
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.linkaotro:hover{
+    color: rgb(78, 3, 88);
+}
+.botnRegistro{
+    border: none;
+}
+.botnInicioSesion{
+    border: none;
+}
+.inputForms{
+    padding: 10px;
+    border-radius: 15px;
+    background-color: transparent;
+    border-color: transparent;
+}

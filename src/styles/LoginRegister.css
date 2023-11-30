@@ -1,10 +1,16 @@
-body{
+.PageRegister{
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-image: linear-gradient(80deg, rgb(5, 124, 172), rgb(199, 10, 114)) ;
+    background-image: linear-gradient(80deg, #E5529A, rgb(5, 124, 172)) ;
     overflow: hidden;
-    font-family:  'poppins';
+}
+.PageLogin{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(80deg, rgb(5, 124, 172), #E5529A) ;
+    overflow: hidden;
 }
 .logo {
     display: flex;
@@ -13,7 +19,8 @@ body{
 .containerFormImg{
     display: flex;
     flex-direction: row;
-    
+    align-items: center;
+    justify-content: space-around;
 }
 .logo img {
     max-width: 130px;

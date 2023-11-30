@@ -8,17 +8,17 @@ import DEA3 from '../assets/DEA3.png';
 
 const Login = () => {
   return (
-    <div>
+    <div className="PageLogin">
       <div className="logo">
         <img src={DEA1} alt="logo" />
       </div>
-      <h2 className="HeaderPage">Iniciar Sesión en MindFLow Tasks</h2>
+      <h2 className="HeaderPage">Iniciar Sesión</h2>
       <div className="containerFormImg">
         <div className="derFoto"><img src={DEA2} alt="fotoDer" /></div>
         <LoginForm />
         <div className="derFoto"><img src={DEA3} alt="fotoDer" /></div>
       </div>
-      
+     
     </div>
   );
 }
