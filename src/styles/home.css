@@ -77,7 +77,6 @@ body {
     font-weight: 700;
     font-size: 37px;
     font-family: 'Poppins', sans-serif;
-<<<<<<< HEAD
     color: rgb(255, 255, 255);
 }
 .botnRegistro{
@@ -99,31 +98,6 @@ body {
 @keyframes down {
     0%, 100%{
         top:-100px;
-=======
-  }
-  
-  .btn-light {
-    display: block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-light:hover {
-    background-color: #ddd;
-  }
-  
-  @keyframes down {
-    0%,
-    100% {
-      top: -100px;
->>>>>>> 0d0e770f534f1965b819fd134156bef65e07bdad
     }
     70% {
       top: 700px;

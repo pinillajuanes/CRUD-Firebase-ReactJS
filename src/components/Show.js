@@ -73,26 +73,13 @@ const Show = () => {
               <Link to="/create" className="btn btn-secondary">Create</Link>
             </div>
             <div>
-            <table className="table table-light table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">Título</th>
-                  <th scope="col">Detalles</th>
-                  <th scope="col">Última modificación</th>
-                  <th scope="col">Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tareas.map((tarea) => (
-                  <tr key={tarea.id}>
-                    <td style={{ textDecoration: tarea.completado ? 'line-through' : 'none' }}>{tarea.titulo}</td>
-                    <td>{tarea.detalles}</td>
-                    <td>{tarea.fecha_creacion.toDate().toLocaleString()}</td>
-                    <td>
-                      <button onClick={() => changeComplete(tarea.id)} className='btn btn-info'><i className='fa fa-check-circle'></i></button>
-                      <Link to={`/edit/${tarea.id}`} className='btn btn-light'><i className='fa-solid fa-pencil'></i></Link>
-                      <button onClick={() => confirmDelete(tarea.id)} className='btn btn-danger'><i className='fa-solid fa-trash'></i></button>
-                    </td>
+              <table className="table table-dark table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Título</th>
+                    <th scope="col">Detalles</th>
+                    <th scope="col">Última modificación</th>
+                    <th scope="col">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
