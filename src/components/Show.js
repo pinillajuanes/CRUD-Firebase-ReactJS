@@ -6,6 +6,8 @@ import Swal from 'sweetalert2';
 import { doc } from 'firebase/firestore';
 import withReactContent from 'sweetalert2-react-content';
 import { auth } from '../firebaseConfig/firebase';
+import DEA1 from '../assets/DEA1.png';
+import '../styles/showall.css';
 
 const MySwal = withReactContent(Swal);
 
@@ -67,13 +69,20 @@ const Show = () => {
   return (
     <>
       <div className="container">
+      <div className="logo">
+        <img src={DEA1} alt="logo" />
+      </div>
+      <div className='headerrr'>
+        <h1 className='HeaderPrincipal'>Mi espacio de tareas</h1>
+        <Link to="/create" className="botnCrear">Create</Link>
+        
+      </div>
+
         <div className="row">
-          <div className="col">
-            <div className='d-grip gap-2'>
-              <Link to="/create" className="btn btn-secondary">Create</Link>
-            </div>
+          <div className="colooooo">
+          
             <div>
-              <table className="table table-dark table-hover">
+              <table className="table table-light table-hover">
                 <thead>
                   <tr>
                     <th scope="col">Título</th>

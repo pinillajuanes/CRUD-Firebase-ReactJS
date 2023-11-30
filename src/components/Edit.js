@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { doc, updateDoc, getDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig/firebase';
+import '../styles/createdit.css';
+import DEA1 from '../assets/DEA1.png';
 
 const Edit = () => {
   const [titulo, setTitulo] = useState('');
@@ -37,9 +39,12 @@ const Edit = () => {
 
   return (
     <div className='container'>
+    <div className="logo">
+        <img src={DEA1} alt="logo" />
+      </div>
       <div className='row'>
-        <div className='col'>
-          <h1 className='text-center'>Editar tarea</h1>
+        <div className='containparaCreateyEdit'>
+          <h1 className='HeaderPage'>Editar tarea</h1>
           <form onSubmit={update}>
             <div className='mb-3'>
               <label className='form-label'>Título</label>

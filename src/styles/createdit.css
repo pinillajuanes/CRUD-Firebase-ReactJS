@@ -3,28 +3,23 @@
     padding: 0;
     min-height: 100vh;
     background-image: linear-gradient(80deg, #E5529A, rgb(5, 124, 172)) ;
-}
-.PageLogin{
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background-image: linear-gradient(80deg, rgb(5, 124, 172), #E5529A) ;
+    overflow: hidden;
 }
 .logo {
     display: flex;
     justify-content: space-between;
 }
-.containerFormImg{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
 .logo img {
     max-width: 130px;
 }
-.derFoto img {
-    max-width: 300px;
+.containparaCreateyEdit{
+    border-color: #fff;
+    padding: 40px;
+    border-width: 3px;
+    border-radius: 40px;
+    background-color: transparent;
+    border-style:solid;
+    color:#fff;
 }
 .HeaderPage{
     text-align: center;
